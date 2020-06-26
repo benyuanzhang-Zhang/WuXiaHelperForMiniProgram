@@ -1,3 +1,8 @@
+
+# WuXiaHelperForMiniProgram
+段段 - 天刀武侠助手（https://github.com/duanyukai/DDWuxiaHelper） 微信小程序版
+感谢段段提供的数据
+
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
