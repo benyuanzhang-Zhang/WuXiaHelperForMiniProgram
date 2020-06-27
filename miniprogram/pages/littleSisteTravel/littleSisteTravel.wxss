@@ -1,0 +1,4 @@
+/* miniprogram/pages/littleSisteTravel/littleSisteTravel.wxss */
+.search {
+  width: 100%;
+}

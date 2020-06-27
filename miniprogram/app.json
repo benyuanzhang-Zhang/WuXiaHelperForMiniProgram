@@ -1,19 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room",
-    "pages/test/test"
+    "pages/littleSisteTravel/littleSisteTravel"
   ],
   "window": {
     "backgroundColor": "#409EFF",
@@ -22,6 +9,14 @@
     "navigationBarTitleText": "天刀助手 小程序版",
     "navigationBarTextStyle": "black"
   },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "debug": false,
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

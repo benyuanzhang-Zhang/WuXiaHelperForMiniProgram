@@ -1,20 +1,37 @@
-// miniprogram/pages/test/test.js
+// miniprogram/pages/littleSisteTravel/littleSisteTravel.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    search: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      search: this.search.bind(this)
+    })
   },
-
+  search: function(value) {
+    return new Promise((resolve, reject) => {
+      const db = wx.cloud.database()
+      db
+        .collection('littleSiste_travel')
+        .where({
+          t1: '归雁名驹失窃案'
+        })
+        .then(res => {
+          resolve(res)
+        })
+    })
+  },
+  searchResult: (e) => {
+    console.log(e);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
