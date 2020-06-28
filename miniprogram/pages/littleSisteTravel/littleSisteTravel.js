@@ -1,4 +1,5 @@
 // miniprogram/pages/littleSisteTravel/littleSisteTravel.js
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -17,20 +18,45 @@ Page({
     })
   },
   search: function(value) {
+    if (!value) return
     return new Promise((resolve, reject) => {
-      const db = wx.cloud.database()
       db
-        .collection('littleSiste_travel')
+        .collection('travel_index')
         .where({
-          t1: '归雁名驹失窃案'
+          name: db.RegExp({
+            regexp: '.*' + value + '.*',
+            options: 'i'
+          })
         })
-        .then(res => {
-          resolve(res)
+        .get({
+          success: function(result) {
+            const data = []
+            result.data.forEach(item => {
+              data.push({
+                text: item.name,
+                value: item._id
+              })
+            })
+            resolve(data)
+          },
+          // fail: (err) => {
+          //   console.log(err)
+          //   reject(err)
+          // }
         })
     })
   },
-  searchResult: (e) => {
-    console.log(e);
+  selectResult: (e) => {
+    db
+      .collection('littleSiste_travel')
+      .where({
+        _id: e.detail.item.value
+      })
+      .get({
+        success: (res) => {
+          console.log(res.data[0].data)
+        }
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
