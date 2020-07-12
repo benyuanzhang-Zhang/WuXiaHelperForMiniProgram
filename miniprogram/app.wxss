@@ -1,3 +1,5 @@
+/**vant common style**/
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
 /**app.wxss**/
 .container {
   display: flex;

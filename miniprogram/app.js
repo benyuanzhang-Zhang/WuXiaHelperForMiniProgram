@@ -7,7 +7,6 @@ App({
     } else {
       wx.cloud.init({
         env: 'tiandao-data-u1rd1',
-        eve: 'wuxia-test',
         traceUser: true
       })
     }

@@ -1,6 +1,23 @@
 <!--miniprogram/pages/littleSisteTravel/littleSisteTravel.wxml-->
 <view class="container">
   <view class="search">
-    <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    <van-search
+      value="{{search}}"
+      input-alige="center"
+      placeholder="请输入搜索内容"
+      bind:search="searchSth"
+      bind:cancel="searchCancel"
+    >
+    </van-search>
+  </view>
+  <view class="show" hidden="{{showComponent}}">
+    <van-cell-group>
+      <van-cell
+        wx:for="{{ allData }}"
+        wx:key="_id"
+        title="{{ item.name }}"
+        value="{{ item._id }}"
+      />
+    </van-cell-group>
   </view>
 </view>

@@ -1,7 +1,11 @@
 {
+  "cloud": true,
   "pages": [
     "pages/littleSisteTravel/littleSisteTravel"
   ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
   "window": {
     "backgroundColor": "#409EFF",
     "backgroundTextStyle": "dark",
@@ -17,6 +21,5 @@
     "weui": true
   },
   "debug": false,
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
